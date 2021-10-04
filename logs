@@ -1,0 +1,19 @@
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /videos                   --> main.GetAllVideos (3 handlers)
+[GIN-debug] POST   /videos                   --> main.CreateVideo (3 handlers)
+[GIN-debug] Environment variable PORT is undefined. Using port :8080 by default
+[GIN-debug] Listening and serving HTTP on :8080
+::1 - [04 Oct 21 21:52 WAT] POST /videos 201 230.993µs 
+::1 - [04 Oct 21 21:52 WAT] POST /videos 201 71.295µs 
+::1 - [04 Oct 21 21:52 WAT] POST /videos 201 100.311µs 
+::1 - [04 Oct 21 21:52 WAT] POST /videos 201 89.722µs 
+::1 - [04 Oct 21 21:52 WAT] POST /videos 201 74.697µs 
+::1 - [04 Oct 21 21:52 WAT] POST /videos 201 63.767µs 
+::1 - [04 Oct 21 21:52 WAT] POST /videos 201 70.813µs 
+::1 - [04 Oct 21 21:52 WAT] POST /videos 201 107.591µs 
+::1 - [04 Oct 21 21:52 WAT] POST /videos 201 117.135µs 
+::1 - [04 Oct 21 21:53 WAT] GET /videos 200 66.107µs 
+::1 - [04 Oct 21 21:53 WAT] GET /videos 200 49.611µs 
