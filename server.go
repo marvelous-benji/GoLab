@@ -1,12 +1,8 @@
 package main
 
 import (
-	"io"
-	"os"
-
 	"github.com/gin-gonic/gin"
 	"github.com/marvelous-benji/gin_proj/controller"
-	"github.com/marvelous-benji/gin_proj/middlewares"
 	"github.com/marvelous-benji/gin_proj/service"
 )
 
@@ -16,7 +12,6 @@ var (
 )
 
 func GetAllVideos(ctx *gin.Context) {
-	//var videos []entity.Video
 	videos := videoController.Findall()
 	ctx.JSON(200, gin.H{
 		"status": "success",
@@ -34,15 +29,8 @@ func CreateVideo(ctx *gin.Context) {
 	})
 }
 
-func LogToFile() {
-	f, _ := os.Create("logs")
-	gin.DefaultWriter = io.MultiWriter(f, os.Stdout)
-}
-
 func main() {
-	LogToFile()
-	server := gin.New()
-	server.Use(gin.Recovery(), middlewares.Logger())
+	server := gin.Default()
 
 	server.GET("/videos", GetAllVideos)
 	server.POST("/videos", CreateVideo)
